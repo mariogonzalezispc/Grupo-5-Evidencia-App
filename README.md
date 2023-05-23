@@ -1,4 +1,4 @@
-<img src="" align="left" height="300">
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/logo2.png" align="left" height="300">
 
 # Trabajo práctico grupal - abril-junio 2023
 Programador de Aplicaciones para mòviles
@@ -55,7 +55,9 @@ almacenamiento de cuentas de usuario/contraseñas.
     ● Considerar utilizar algún servicio de autenticación como Auth0 para la autenticación.
 
 6. La app debe implementar algún tipo de recurso multimedia Ej:video, audio, etc
-Presentación:
+
+
+### Presentación:
 
 - **a)** Cada grupo deberá compartir su desarrollo mediante un repositorio de código, en
 este caso github. En este espacio deberán compartir además del código
@@ -64,7 +66,8 @@ Ej: imágenes, iconos, recursos multimedia, etc.
 - **b)** Además deberán presentar un video de la aplicación funcionando correctamente, a
 la vez que los integrantes comentan brevemente el proceso de desarrollo.
 
-- **Aclaración:**
+### Aclaración:
+
 El objetivo de nuestro trabajo será la participación de todos los integrantes fomentando que
 utilicen todas las herramientas de desarrollo que han adquirido hasta el momento, por esto
 es de vital importancia que documenten su proyecto de acuerdo a lo que consideren
