@@ -12,7 +12,7 @@ Damos la bienvenida a todos los colaboradores 💙
 - **Camila Micaela Gil Borel**. Estudiante de TSDWAD [Ver Github]().
 - **Ana Carolina Zamudia**. Estudiante de TSDWAD [Ver Github]().
 - **Celeste Miranda Portillo**. Estudiante de TSDWAD [Ver Github]().
-- **Felipe Ignacio Rebolledo**. Estudiante de TSDWAD [Ver Github]().
+- **Felipe Ignacio Rebolledo**. Estudiante de TSDWAD [Ver Github](https://github.com/rebofel).
 - **Mario Gonzalez**. Estudiante de TSDWAD [Ver Github](https://github.com/mariogonzalezispc).
 - **Ferreyra Gastón**. Estudiante de TSDWAD [Ver Github](https://github.com/gastonloco).
 
