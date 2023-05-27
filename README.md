@@ -74,3 +74,43 @@ es de vital importancia que documenten su proyecto de acuerdo a lo que considere
 necesario, teniendo en cuenta sus trabajos anteriores.
 Es por lo anterior que la documentación y organización de su repositorio queda a
 disposición de la forma que desee utilizar el grupo.
+
+
+
+## Propuesta de desarrollo de un gimnasio para dispositivos móviles
+
+
+
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b01.PNG" align="left" height="300">
+
+---
+
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b02.PNG" align="left" height="300">
+
+---
+
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b03.PNG" align="left" height="300">
+
+---
+
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b04.PNG" align="left" height="300">
+
+---
+
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b05.PNG" align="left" height="300">
+
+---
+
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b06.PNG" align="left" height="300">
+
+---
+
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b07.PNG" align="left" height="300">
+
+---
+
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b08.PNG" align="left" height="300">
+
+
+
+
