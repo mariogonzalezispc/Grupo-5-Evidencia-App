@@ -81,42 +81,42 @@ disposición de la forma que desee utilizar el grupo.
 
 
 <div style="text-align: center;">
-<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b01.PNG" height="300">
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b01.PNG" height="auto">
 </div>
 
 <br>
 <div style="text-align: center;">
-<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b02.PNG" height="300">
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b02.PNG" height="auto">
 </div>
 
 <br>
 <div style="text-align: center;">
-<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b03.PNG" height="300">
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b03.PNG" height="auto">
 </div>
 
 <br>
 <div style="text-align: center;">
-<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b04.PNG" height="300">
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b04.PNG" height="auto">
 </div>
 
 <br>
 <div style="text-align: center;">
-<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b05.PNG" height="300">
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b05.PNG" height="auto">
 </div>
 
 <br>
 <div style="text-align: center;">
-<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b06.PNG" height="300">
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b06.PNG" height="auto">
 </div>
 
 <br>
 <div style="text-align: center;">
-<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b07.PNG" height="300">
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b07.PNG" height="auto">
 </div>
 
 <br>
 <div style="text-align: center;">
-<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b08.PNG" height="300">
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b08.PNG" height="auto">
 </div>
 
 <br>
