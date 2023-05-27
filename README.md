@@ -80,36 +80,46 @@ disposición de la forma que desee utilizar el grupo.
 ## Propuesta de desarrollo de un gimnasio para dispositivos móviles
 
 
-
-<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b01.PNG" align="center" height="300">
-
-<br>
-
-<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b02.PNG" align="center" height="300">
+<div style="text-align: center;">
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b01.PNG" height="300">
+</div>
 
 <br>
-
-<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b03.PNG" align="center" height="300">
-
-<br>
-
-<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b04.PNG" align="center" height="300">
+<div style="text-align: center;">
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b02.PNG" height="300">
+</div>
 
 <br>
-
-<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b05.PNG" align="center" height="300">
-
-<br>
-
-<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b06.PNG" align="center" height="300">
+<div style="text-align: center;">
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b03.PNG" height="300">
+</div>
 
 <br>
-
-<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b07.PNG" align="center" height="300">
+<div style="text-align: center;">
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b04.PNG" height="300">
+</div>
 
 <br>
+<div style="text-align: center;">
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b05.PNG" height="300">
+</div>
 
-<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b08.PNG" align="center" height="300">
+<br>
+<div style="text-align: center;">
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b06.PNG" height="300">
+</div>
+
+<br>
+<div style="text-align: center;">
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b07.PNG" height="300">
+</div>
+
+<br>
+<div style="text-align: center;">
+<img src="https://github.com/mariogonzalezispc/Grupo-5-Evidencia-App/blob/master/imagenes/boceto/b08.PNG" height="300">
+</div>
+
+<br>
 
 
 
