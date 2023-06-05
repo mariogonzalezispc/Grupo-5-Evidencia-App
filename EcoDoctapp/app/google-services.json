@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "95846454543",
+    "project_id": "ecodoctapp",
+    "storage_bucket": "ecodoctapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95846454543:android:f5bc5b33cdaf578aa69a7a",
+        "android_client_info": {
+          "package_name": "com.cdp.ecodoctapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJLUvbHWf6niBBTlvf7uL4wZfZwPx0NsI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
