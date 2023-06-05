@@ -4,7 +4,6 @@ public class UserEntity {
 
     private String id;
     private String email;
-    private String password;
     private String name;
     private String lastname;
 
@@ -23,13 +22,6 @@ public class UserEntity {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public String getName() {
         return name;

@@ -1,93 +1,70 @@
 package com.cdp.ecodoctapp.service;
 
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-
-import com.cdp.ecodoctapp.MainActivity;
-import com.cdp.ecodoctapp.RegisterActivity;
 import com.cdp.ecodoctapp.entity.Message;
-import com.cdp.ecodoctapp.entity.UserEntity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.cdp.ecodoctapp.repository.UserRepository;
 
 public class UserService {
-    private FirebaseDatabase db = FirebaseDatabase.getInstance();
-    private DatabaseReference dref = db.getReference(UserEntity.class.getSimpleName());
 
-    FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
-    FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    // Se crea serivcio para realizar control y logica de negocio de User
+    private UserRepository userRepository = new UserRepository();
 
-    public Message create (String name, String lastname, String email, String password){
+    public Message register(String name, String lastname, String email, String password){
 
         // se valida que los datos no sean nulos
         if (validData(name,lastname,email, password)){
             return new Message("Complete todos los datos son obligatorios");
         }
-        // guarda al usuario en la base de datas
-
+        Message message = new Message();
+        // se llama al repository para generar user,
         try {
-
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                String id = mAuth.getCurrentUser().getUid();
-
-                    dref.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            UserEntity user = new UserEntity(id,email,name,lastname);
-                            dref.push().setValue(user);
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                            try {
-                                throw new Exception("No se guardo los datos correctamente");
-                            } catch (Exception e) {
-                                throw new RuntimeException(e);
-                            }
-
-                        }
-                    });
-
-
-            }
-
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                      throw new RuntimeException(e);
-
-            }
-        });
+            userRepository.register(name, lastname, email, password);
+            message.setMessage("Se creo el usuario exitosamente");
         } catch (Exception e){
-            return new Message("No se guardo los datos correctamente");
+            message.setMessage("No se guardo los datos correctamente");
         }
 
-        return new Message("Se creo el usuario exitosamente");
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed();
-        return false;
+        return message;
     }
 
     private boolean validData (String name, String lastname, String email, String password){
         return name.isEmpty()|| lastname.isEmpty()||email.isEmpty()||password.isEmpty();
+    }
+
+    public Message login (String mail,String password){
+
+        Message message = new Message();
+        if (userRepository.getCurrentUser()!= null){
+            message = createMessage("Ya se encuentra logueado",false);
+
+              return message;
+
+        }
+
+        try {
+            userRepository.login(mail, password);
+            message = createMessage("Ingreso con exito",true);
+        } catch (Exception e){
+            message = createMessage("Error al loguearse: "+ e,false);
+        }
+
+        return message;
+    }
+
+    public Message logout () {
+        Message message = new Message();
+        userRepository.logout();
+        if (userRepository.getCurrentUser()!=null){
+            message = createMessage("Error al desloguearse",false);
+        }else {
+            message = createMessage("Deslogueo exitosos", true);
+        }
+        return message;
+    }
+
+    private Message createMessage(String msg,boolean isOk){
+        Message message = new Message();
+        message.setMessage(msg);
+        message.setOK(isOk);
+        return message;
     }
 }

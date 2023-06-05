@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String emailUser = email.getText().toString().trim();
                 String passUser = password.getText().toString().trim();
 
-                Message message = userService.create(nameUser,lastnameUser,emailUser,passUser);
+                Message message = userService.register(nameUser,lastnameUser,emailUser,passUser);
                 Toast.makeText(RegisterActivity.this, message.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
