@@ -1,5 +1,7 @@
 package com.cdp.ecodoctapp.service;
 
+import android.util.Log;
+
 import com.cdp.ecodoctapp.entity.Message;
 import com.cdp.ecodoctapp.repository.UserRepository;
 
@@ -45,6 +47,8 @@ public class UserService {
             message = createMessage("Ingreso con exito",true);
         } catch (Exception e){
             message = createMessage("Error al loguearse: "+ e,false);
+            Log.d("Error Login",e.getMessage(),e);
+
         }
 
         return message;
@@ -66,5 +70,10 @@ public class UserService {
         message.setMessage(msg);
         message.setOK(isOk);
         return message;
+    }
+
+    public boolean isLogged(){
+
+        return userRepository.getCurrentUser()!=null && userRepository.getCurrentUser().getEmail()!=null;
     }
 }

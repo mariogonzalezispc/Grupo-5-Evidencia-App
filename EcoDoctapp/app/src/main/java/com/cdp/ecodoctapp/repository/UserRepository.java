@@ -1,6 +1,7 @@
 package com.cdp.ecodoctapp.repository;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -20,7 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.concurrent.Executor;
 
-public class UserRepository {
+public class UserRepository implements Executor {
 
     // Se crea Repositorio para toda interacion con la base de datos.
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
@@ -85,10 +86,15 @@ public class UserRepository {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (!task.isSuccessful()) {
                             Log.d("LOGIN", "ERROR" + task.getResult().toString());
-                           throw new RuntimeException("Error al loguearse");
+                            throw new RuntimeException("Error al loguearse");
 
                         }
+
+
+
                     }
+
+
 
                 });
     }
@@ -98,4 +104,8 @@ public class UserRepository {
         Log.d("LOGOUT", "¡se deslogeo!");
     }
 
+    @Override
+    public void execute(Runnable runnable) {
+
+    }
 }
