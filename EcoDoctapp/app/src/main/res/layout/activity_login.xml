@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#406B2B"
     tools:context=".activity_login">
 
     <androidx.cardview.widget.CardView
@@ -26,7 +27,7 @@
 
 
             <EditText
-                android:id="@+id/email_login"
+                android:id="@+id/correo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -34,7 +35,7 @@
                 android:inputType="textEmailAddress" />
 
             <EditText
-                android:id="@+id/password_login"
+                android:id="@+id/contrasena"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -46,12 +47,26 @@
                 android:layout_height="15dp" />
 
             <Button
-                android:id="@+id/btn_login"
+                android:id="@+id/iniciarSesionBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:backgroundTint="#297006"
+                android:onClick="iniciarSesion"
                 android:text="Ingresar" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/mundo"
+        tools:layout_editor_absoluteX="0dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
