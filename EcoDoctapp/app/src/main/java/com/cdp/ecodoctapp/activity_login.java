@@ -40,11 +40,13 @@ public class activity_login extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
     }
 
+
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         //updateUI(currentUser);
     }
+
 
     public void iniciarSesion (View view){
 

@@ -40,6 +40,7 @@ public class SlideshowFragment extends Fragment {
     public void logout (View view){
 
         Message message =  userService.logout();
+        Toast.makeText(getContext(), message.getMessage(), Toast.LENGTH_SHORT).show();
 
     }
     @Override
