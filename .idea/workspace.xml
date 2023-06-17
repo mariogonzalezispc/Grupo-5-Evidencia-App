@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5dde403-8d45-46d0-92b8-db7ebe03bfef" name="Changes" comment="" />
+    <list default="true" id="e5dde403-8d45-46d0-92b8-db7ebe03bfef" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Grupo-5-Evidencia-App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Grupo-5-Evidencia-App.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +16,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2QAwTaFqbKK3eMGu7ryaCA9Flvv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -25,7 +32,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/Mario Gonzalez/Desktop/Grupo5/Grupo-5-Evidencia-App"
+    "last_opened_file_path": "C:/Users/Camila/AndroidStudioProjects/Grupo-5-Evidencia-App/EcoDoctapp/build.gradle",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
