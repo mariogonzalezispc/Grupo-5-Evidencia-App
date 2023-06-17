@@ -31,7 +31,6 @@
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
     <activity
-<<<<<<< HEAD
         android:id="@+id/activity_login3"
         android:name="com.cdp.ecodoctapp.activity_login"
         android:label="activity_login"
@@ -46,10 +45,10 @@
         android:name="com.cdp.ecodoctapp.EcoPuntos"
         android:label="activity_eco_puntos"
         tools:layout="@layout/activity_eco_puntos" />
-=======
+    <activity
         android:id="@+id/activity_reproductor_video"
         android:name="com.cdp.ecodoctapp.activity_reproductor_video"
         android:label="activity_reproductor_video"
         tools:layout="@layout/activity_reproductor_video" />
->>>>>>> develop
+
 </navigation>
