@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.cdp.ecodoctapp.entity.Message;
+import com.cdp.ecodoctapp.repository.UserRepository;
+import com.cdp.ecodoctapp.service.AuthenticationService;
 import com.cdp.ecodoctapp.service.UserService;
 import com.cdp.ecodoctapp.ui.slideshow.SlideshowFragment;
 import com.google.android.material.snackbar.Snackbar;
@@ -23,6 +25,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.cdp.ecodoctapp.databinding.ActivityMainBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,9 +35,23 @@ public class MainActivity extends AppCompatActivity {
 
     private UserService userService = new UserService();
 
+    UserRepository userRepository = new UserRepository();
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    AuthenticationService authService;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        mAuth = FirebaseAuth.getInstance();
+
+        // Verificar si el usuario está logueado
+        FirebaseUser currentUser = userRepository.getCurrentUser();
+        if (currentUser != null) {
+            // El usuario está logueado, redirigir a HomeFragment
+            startHomeActivity();
+            return;
+        }
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -47,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        if(userService.isLogged()) {
+
             DrawerLayout drawer = binding.drawerLayout;
             NavigationView navigationView = binding.navView;
             // Passing each menu ID as a set of Ids because each
@@ -61,7 +79,9 @@ public class MainActivity extends AppCompatActivity {
             NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
             NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
             NavigationUI.setupWithNavController(navigationView, navController);
-        }
+
+        authService = new AuthenticationService();
+        authService.startAutoLoginCheck(getApplicationContext());
 
     }
 
@@ -102,5 +122,9 @@ public class MainActivity extends AppCompatActivity {
          */
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        authService.stopAutoLoginCheck();
+    }
 }
