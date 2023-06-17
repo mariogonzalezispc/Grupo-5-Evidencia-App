@@ -1,6 +1,7 @@
 package com.cdp.ecodoctapp;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
@@ -22,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EcoPuntos extends FragmentActivity implements OnMapReadyCallback {
+public class EcoPuntos extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private ActivityEcoPuntosBinding binding;
