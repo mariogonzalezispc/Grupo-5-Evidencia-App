@@ -22,4 +22,9 @@
         android:name="com.cdp.ecodoctapp.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <activity
+        android:id="@+id/activity_reproductor_video"
+        android:name="com.cdp.ecodoctapp.activity_reproductor_video"
+        android:label="activity_reproductor_video"
+        tools:layout="@layout/activity_reproductor_video" />
 </navigation>

@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        if(userService.isLogged()) {
+        //if(userService.isLogged()) {
             DrawerLayout drawer = binding.drawerLayout;
             NavigationView navigationView = binding.navView;
             // Passing each menu ID as a set of Ids because each
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             mAppBarConfiguration = new AppBarConfiguration.Builder(
-                    R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                    R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.activity_reproductor_video)
                     .setOpenableLayout(drawer)
                     .build();
             NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             NavigationUI.setupWithNavController(navigationView, navController);
         }
 
-    }
+   // }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
