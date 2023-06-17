@@ -13,6 +13,9 @@
         android:theme="@style/Theme.EcoDoctapp"
         tools:targetApi="31">
         <activity
+            android:name=".activity_reproductor_video"
+            android:exported="false" />
+        <activity
             android:name=".activity_login"
             android:exported="false" />
         <activity
