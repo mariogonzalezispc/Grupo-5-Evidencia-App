@@ -10,21 +10,19 @@
             android:icon="@drawable/btn_login"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/activity_login3"
-            android:icon="@drawable/btn_login"
-            android:title="Ingresar" />
-        <item
             android:id="@+id/activity_reproductor_video"
             android:icon="@drawable/btn_login"
-            android:title="ecovideo"  />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/btn_login"
-            android:title="Registrarse" />
+            android:title="EcoVideo"  />
         <item
             android:id="@+id/ecoPuntos2"
             android:icon="@drawable/btn_login"
-            android:title="EcoPuntos"
+            android:title="EcoPuntos" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/btn_login"
+            android:title="Cerrar Sesión"
+            android:onClick="onOptionsItemSelected"
             app:actionViewClass="android.widget.Button" />
+
     </group>
 </menu>

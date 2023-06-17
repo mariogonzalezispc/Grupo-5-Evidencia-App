@@ -33,15 +33,19 @@
         <activity
             android:name=".EcoPuntos"
             android:exported="false"
-            android:label="@string/title_activity_eco_puntos" />
+            android:parentActivityName=".MainActivity"
+            android:label="EcoPuntos" />
         <activity
             android:name=".activity_reproductor_video"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".activity_login"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

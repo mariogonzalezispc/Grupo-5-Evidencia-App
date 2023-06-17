@@ -59,6 +59,10 @@ dependencies {
    implementation 'com.google.firebase:firebase-database'
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.android.gms:play-services-maps:10.0.1'
+    // Dependencias relacionadas al parseo de CSV para los ecopuntos
+    implementation 'com.opencsv:opencsv:5.5.2'
+    implementation 'com.google.firebase:firebase-database:20.0.2'
 }
 
 
