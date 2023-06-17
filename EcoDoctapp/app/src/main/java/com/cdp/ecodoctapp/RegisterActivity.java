@@ -19,21 +19,18 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterActivity extends AppCompatActivity {
-    private FirebaseAuth mAuth;
-
     private EditText nombre;
     private EditText apellido;
     private EditText correoRegister;
     private EditText contrasenaRegister;
     private EditText contrasenaRegisterConfirmacion;
 
+    private UserService userService = new UserService();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-        mAuth = FirebaseAuth.getInstance();
 
         nombre = findViewById(R.id.nombre);
         apellido = findViewById(R.id.apellido);
@@ -43,37 +40,28 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    public void onStart() {
-        super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        //updateUI(currentUser);
+    public void onResume() {
+        super.onResume();
+        if (userService.isLogged()){
+            Intent intent = new Intent(this,MainActivity.class);
+            startActivity(intent);
+        }
     }
 
-    public void registrarUsuario (View view) {
+    public void registrarUsuario (View view) throws InterruptedException {
 
-        if(contrasenaRegister.getText().toString().equals(contrasenaRegisterConfirmacion.getText().toString())){
+        String name = nombre.getText().toString();
+        String lastname = apellido.getText().toString();
+        String email = correoRegister.getText().toString();
+        String password = contrasenaRegister.getText().toString();
+        String password2 = contrasenaRegisterConfirmacion.getText().toString();
 
-            mAuth.createUserWithEmailAndPassword(correoRegister.getText().toString().trim(), contrasenaRegister.getText().toString())
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(getApplicationContext(), "Usuario creado",
-                                        Toast.LENGTH_SHORT).show();
-                                FirebaseUser user = mAuth.getCurrentUser();
-                                Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                                startActivity(i);
-                            } else {
-                                Toast.makeText(getApplicationContext(), "Authenticaton failed",
-                                        Toast.LENGTH_SHORT).show();
-                                //updateUI(null);
-                            }
-                        }
-                    });
-        } else {
-            Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
-        }
+        Message message = userService.register(name,lastname,email,password,password2);
 
+        Toast.makeText(this,message.getMessage(),Toast.LENGTH_SHORT);
+        Thread.sleep(3*1000);
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 
 

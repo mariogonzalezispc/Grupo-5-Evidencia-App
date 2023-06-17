@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
+    private  Button btnLogin;
+    private Button btnRegister;
     private UserService userService = new UserService();
 
     @Override
@@ -39,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
+        btnLogin = findViewById(R.id.button);
+        btnRegister = findViewById(R.id.button2);
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,23 +51,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //if(userService.isLogged()) {
-            DrawerLayout drawer = binding.drawerLayout;
-            NavigationView navigationView = binding.navView;
-            // Passing each menu ID as a set of Ids because each
-            // menu should be considered as top level destinations.
 
+   }
 
-            mAppBarConfiguration = new AppBarConfiguration.Builder(
-                    R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.activity_reproductor_video)
-                    .setOpenableLayout(drawer)
-                    .build();
-            NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-            NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-            NavigationUI.setupWithNavController(navigationView, navController);
-        }
+   public void onResume() {
+       super.onResume();
+       mAppBarConfiguration = null;
+       if(userService.isLogged()) {
+           DrawerLayout drawer = binding.drawerLayout;
+           NavigationView navigationView = binding.navView;
 
-   // }
+           mAppBarConfiguration = new AppBarConfiguration.Builder(
+                   R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.activity_reproductor_video)
+                   .setOpenableLayout(drawer)
+                   .build();
+           NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+           NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+           NavigationUI.setupWithNavController(navigationView, navController);
+            btnRegister.setVisibility(View.GONE);
+            btnLogin.setVisibility(View.GONE);
+
+       }
+   }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -89,18 +98,5 @@ public class MainActivity extends AppCompatActivity {
         Intent loginIntent = new Intent(this, activity_login.class);
         startActivity(loginIntent);
     }
-
-    public void logout (View view){
-
-        /*
-      Message message =  userService.logout();
-        Toast.makeText(this, message.getMessage(), Toast.LENGTH_SHORT).show();
-        Intent loginIntent = new Intent(this, SlideshowFragment.class);
-        loginIntent.putExtra("Mensaje Logout", message.getMessage());
-        startActivity(loginIntent);
-
-         */
-    }
-
 
 }

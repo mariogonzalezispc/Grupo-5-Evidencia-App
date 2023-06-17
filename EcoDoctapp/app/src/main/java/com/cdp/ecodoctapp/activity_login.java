@@ -20,13 +20,11 @@ import com.google.firebase.auth.FirebaseUser;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 public class activity_login extends AppCompatActivity {
-    Button btn_register;
-    EditText email, password;
 
     private EditText correo;
     private EditText contrasena;
 
-    private FirebaseAuth mAuth;
+    private UserService userService = new UserService();
 
 
     @Override
@@ -37,35 +35,25 @@ public class activity_login extends AppCompatActivity {
         correo = findViewById(R.id.correo);
         contrasena = findViewById(R.id.contrasena);
 
-        mAuth = FirebaseAuth.getInstance();
     }
 
 
-    public void onStart() {
-        super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        //updateUI(currentUser);
+    public void onResume() {
+        super.onResume();
+        if (userService.isLogged()){
+            Intent intent = new Intent(this,MainActivity.class);
+            startActivity(intent);
+        }
     }
 
 
-    public void iniciarSesion (View view){
-
-
-        mAuth.signInWithEmailAndPassword(correo.getText().toString().trim(), contrasena.getText().toString())
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()) {
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(getApplicationContext(), "Athentication sussesfull.", Toast.LENGTH_SHORT).show();
-                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                                startActivity(i);
-                            //updateUI(null);
-                        } else{
-                            Toast.makeText(getApplicationContext(), "Athentication failed.", Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
-                        }
-                    }
-                });
+    public void iniciarSesion (View view) throws InterruptedException {
+        String email = correo.getText().toString();
+        String password = contrasena.getText().toString();
+        Message message = userService.login(email,password);
+        Toast.makeText(this, message.getMessage(), Toast.LENGTH_SHORT).show();
+        Thread.sleep(3*1000);
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 }

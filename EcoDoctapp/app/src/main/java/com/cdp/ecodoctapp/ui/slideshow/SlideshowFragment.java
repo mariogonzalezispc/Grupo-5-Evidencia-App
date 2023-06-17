@@ -1,5 +1,6 @@
 package com.cdp.ecodoctapp.ui.slideshow;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -15,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.cdp.ecodoctapp.MainActivity;
 import com.cdp.ecodoctapp.R;
 import com.cdp.ecodoctapp.databinding.FragmentSlideshowBinding;
 import com.cdp.ecodoctapp.entity.Message;
@@ -41,7 +43,7 @@ public class SlideshowFragment extends Fragment {
 
         Message message =  userService.logout();
         Toast.makeText(getContext(), message.getMessage(), Toast.LENGTH_SHORT).show();
-
+        onDestroyView();
     }
     @Override
     public void onDestroyView() {

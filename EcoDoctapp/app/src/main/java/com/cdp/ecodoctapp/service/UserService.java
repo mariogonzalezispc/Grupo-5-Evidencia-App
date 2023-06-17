@@ -10,12 +10,16 @@ public class UserService {
     // Se crea serivcio para realizar control y logica de negocio de User
     private UserRepository userRepository = new UserRepository();
 
-    public Message register(String name, String lastname, String email, String password){
+    public Message register(String name, String lastname, String email, String password,String password2){
 
         // se valida que los datos no sean nulos
-        if (validData(name,lastname,email, password)){
+        if (validData(name,lastname,email, password,password2)){
             return new Message("Complete todos los datos son obligatorios");
         }
+        if (!password.equals(password2)){
+            return new Message("Las contraseñas no coinciden");
+        }
+
         Message message = new Message();
         // se llama al repository para generar user,
         try {
@@ -28,8 +32,8 @@ public class UserService {
         return message;
     }
 
-    private boolean validData (String name, String lastname, String email, String password){
-        return name.isEmpty()|| lastname.isEmpty()||email.isEmpty()||password.isEmpty();
+    private boolean validData (String name, String lastname, String email, String password,String password2){
+        return name.isEmpty()|| lastname.isEmpty()||email.isEmpty()||password.isEmpty()||password2.isEmpty();
     }
 
     public Message login (String mail,String password){
