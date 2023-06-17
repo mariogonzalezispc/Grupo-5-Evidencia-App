@@ -24,14 +24,15 @@
             android:padding="10dp">
 
             <EditText
-                android:id="@+id/name"
+                android:id="@+id/nombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Nombre"
                 android:inputType="textPersonName" />
+
             <EditText
-                android:id="@+id/lastname"
+                android:id="@+id/apellido"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -39,7 +40,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/correoRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -47,11 +48,19 @@
                 android:inputType="textEmailAddress" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/contrasenaRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Contraseña"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/contrasenaRegisterConfirmacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Confirmar contraseña"
                 android:inputType="textPassword" />
 
             <Space
@@ -62,9 +71,21 @@
                 android:id="@+id/btn_registro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Registrarme" />
+                android:backgroundTint="#7CC145"
+                android:onClick="registrarUsuario"
+                android:text="Registrarme"
+                app:strokeColor="#68A748" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="407dp"
+        android:layout_height="627dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/resource_super" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
