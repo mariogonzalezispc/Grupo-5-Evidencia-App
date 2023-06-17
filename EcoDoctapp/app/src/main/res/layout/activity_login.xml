@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="70dp">
 
 
             <EditText
@@ -32,7 +32,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Correo"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp" />
 
             <EditText
                 android:id="@+id/contrasena"
@@ -40,7 +41,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Contraseña"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:minHeight="48dp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -50,8 +52,7 @@
                 android:id="@+id/iniciarSesionBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:backgroundTint="#297006"
+                android:backgroundTint="#7CC145"
                 android:onClick="iniciarSesion"
                 android:text="Ingresar" />
         </LinearLayout>
@@ -59,14 +60,16 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="332dp"
+        android:layout_height="502dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/mundo"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintVertical_bias="0.778"
+        app:srcCompat="@drawable/mundo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
