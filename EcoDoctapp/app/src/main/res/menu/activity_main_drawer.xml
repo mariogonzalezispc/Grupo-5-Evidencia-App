@@ -12,15 +12,27 @@
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/btn_login"
-            android:title="@string/menu_gallery" />
+            android:title="Mi Perfil"
+            app:actionViewClass="android.widget.Button" />
         <item
             android:id="@+id/activity_reproductor_video"
             android:icon="@drawable/btn_login"
-            android:title="ecovideo"  />
+            android:title="EcoVideo"  />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/ecoPuntos2"
             android:icon="@drawable/btn_login"
-            android:title="@string/menu_slideshow"
+            android:title="EcoPuntos" />
+        <item
+            android:id="@+id/activity_login"
+            android:icon="@drawable/btn_login"
+            android:title="Iniciar Sesión" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/btn_login"
+            android:title="Cerrar Sesión"
+            android:onClick="onOptionsItemSelected"
             app:actionViewClass="android.widget.Button" />
+
+
     </group>
 </menu>

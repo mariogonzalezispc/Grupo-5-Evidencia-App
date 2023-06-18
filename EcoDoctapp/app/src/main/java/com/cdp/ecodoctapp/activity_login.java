@@ -52,7 +52,7 @@ public class activity_login extends AppCompatActivity {
         String password = contrasena.getText().toString();
         Message message = userService.login(email,password);
         Toast.makeText(this, message.getMessage(), Toast.LENGTH_SHORT).show();
-        Thread.sleep(3*1000);
+        Thread.sleep(1*1000);
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }

@@ -59,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
         Message message = userService.register(name,lastname,email,password,password2);
 
         Toast.makeText(this,message.getMessage(),Toast.LENGTH_SHORT);
-        Thread.sleep(3*1000);
+        Thread.sleep(1*1000);
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
