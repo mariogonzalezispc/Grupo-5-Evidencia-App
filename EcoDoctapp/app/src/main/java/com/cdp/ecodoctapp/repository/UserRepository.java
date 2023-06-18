@@ -84,19 +84,17 @@ public class UserRepository implements Executor {
                 .addOnCompleteListener((Executor) this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (!task.isSuccessful()) {
+                        if (!task.isSuccessful() || task.isCanceled()) {
                             Log.d("LOGIN", "ERROR" + task.getResult().toString());
                             throw new RuntimeException("Error al loguearse");
-
                         }
-
-
-
-                    }
-
-
-
-                });
+                    }}).addOnFailureListener(new OnFailureListener() {
+                          @Override
+                          public void onFailure(@NonNull Exception e) {
+                              Log.d("LOGIN", "ERROR",e);
+                              throw new RuntimeException("Error al loguearse");
+                          }
+                    });
     }
 
     public void logout (){

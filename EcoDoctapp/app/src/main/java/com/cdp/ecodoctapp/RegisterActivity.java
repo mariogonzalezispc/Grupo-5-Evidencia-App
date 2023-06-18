@@ -1,7 +1,9 @@
 package com.cdp.ecodoctapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,45 +12,57 @@ import android.widget.Toast;
 
 import com.cdp.ecodoctapp.entity.Message;
 import com.cdp.ecodoctapp.service.UserService;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterActivity extends AppCompatActivity {
+    private EditText nombre;
+    private EditText apellido;
+    private EditText correoRegister;
+    private EditText contrasenaRegister;
+    private EditText contrasenaRegisterConfirmacion;
 
-    Button btn_register;
-    EditText name, lastname, email, password;
-
-    UserService userService;
-
+    private UserService userService = new UserService();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        this.setTitle("Registro");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        userService = new UserService();
+        nombre = findViewById(R.id.nombre);
+        apellido = findViewById(R.id.apellido);
+        correoRegister = findViewById(R.id.correoRegister);
+        contrasenaRegister = findViewById(R.id.contrasenaRegister);
+        contrasenaRegisterConfirmacion = findViewById(R.id.contrasenaRegisterConfirmacion);
 
-        name = findViewById(R.id.name);
-        lastname = findViewById(R.id.lastname);
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
-        btn_register = findViewById(R.id.btn_registro);
-
-        btn_register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String nameUser = name.getText().toString().trim();
-                String lastnameUser = lastname.getText().toString().trim();
-                String emailUser = email.getText().toString().trim();
-                String passUser = password.getText().toString().trim();
-
-                Message message = userService.register(nameUser,lastnameUser,emailUser,passUser);
-                Toast.makeText(RegisterActivity.this, message.getMessage(), Toast.LENGTH_SHORT).show();
-
-            }
-        });
     }
 
+    public void onResume() {
+        super.onResume();
+        if (userService.isLogged()){
+            Intent intent = new Intent(this,MainActivity.class);
+            startActivity(intent);
+        }
+    }
+
+    public void registrarUsuario (View view) throws InterruptedException {
+
+        String name = nombre.getText().toString();
+        String lastname = apellido.getText().toString();
+        String email = correoRegister.getText().toString();
+        String password = contrasenaRegister.getText().toString();
+        String password2 = contrasenaRegisterConfirmacion.getText().toString();
+
+        Message message = userService.register(name,lastname,email,password,password2);
+
+        Toast.makeText(this,message.getMessage(),Toast.LENGTH_SHORT);
+        Thread.sleep(1*1000);
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
 
 
 }
