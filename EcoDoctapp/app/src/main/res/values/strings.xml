@@ -12,5 +12,6 @@
     <string name="menu_slideshow">logout</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_eco_puntos">EcoPuntos</string>
+    <string name="button_send">Enviar</string>
+    <string name="edit_message">Dejar un comentario</string>
 </resources>

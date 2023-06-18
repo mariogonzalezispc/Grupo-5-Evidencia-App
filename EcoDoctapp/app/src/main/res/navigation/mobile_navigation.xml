@@ -48,5 +48,10 @@
         android:name="com.cdp.ecodoctapp.activity_reproductor_video"
         android:label="activity_reproductor_video"
         tools:layout="@layout/activity_reproductor_video" />
+    <activity
+        android:id="@+id/activity_rating_bar"
+        android:name="com.cdp.ecodoctapp.activity_rating_bar"
+        android:label="activity_activity_rating_bar"
+        tools:layout="@layout/activity_rating_bar" />
 
 </navigation>

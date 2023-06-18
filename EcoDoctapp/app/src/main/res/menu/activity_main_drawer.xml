@@ -17,6 +17,12 @@
             android:id="@+id/ecoPuntos2"
             android:icon="@drawable/btn_login"
             android:title="EcoPuntos" />
+
+        <item
+            android:id="@+id/activity_rating_bar"
+            android:icon="@drawable/btn_login"
+            android:title="Review"  />
+
         <item
             android:id="@+id/logout"
             android:icon="@drawable/btn_login"

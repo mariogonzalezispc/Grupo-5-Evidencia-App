@@ -9,9 +9,9 @@ import android.view.Menu;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.cdp.ecodoctapp.DAO.EcopuntoDAO;
+
 import com.cdp.ecodoctapp.databinding.ActivityLoginBinding;
-import com.cdp.ecodoctapp.entity.Ecopunto;
+
 import com.cdp.ecodoctapp.entity.Message;
 import com.cdp.ecodoctapp.service.UserService;
 import com.cdp.ecodoctapp.ui.slideshow.SlideshowFragment;
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             mAppBarConfiguration = new AppBarConfiguration.Builder(
-                    R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.activity_reproductor_video, R.id.logout)
+                    R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.activity_reproductor_video, R.id.activity_rating_bar, R.id.logout)
                     .setOpenableLayout(drawer)
                     .build();
             NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
