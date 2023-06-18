@@ -9,17 +9,11 @@ import android.view.Menu;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.cdp.ecodoctapp.DAO.EcopuntoDAO;
-import com.cdp.ecodoctapp.databinding.ActivityLoginBinding;
-import com.cdp.ecodoctapp.entity.Ecopunto;
 import com.cdp.ecodoctapp.entity.Message;
 import com.cdp.ecodoctapp.service.UserService;
-import com.cdp.ecodoctapp.ui.slideshow.SlideshowFragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -28,18 +22,20 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.cdp.ecodoctapp.databinding.ActivityMainBinding;
-import com.google.firebase.database.DatabaseReference;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
+    private  Button btnLogin;
+    private Button btnRegister;
+
     private activity_login activityLogin;
+
     private UserService userService = new UserService();
+
+    private  NavigationView navigationView ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +45,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
+        btnLogin = findViewById(R.id.button);
+        btnRegister = findViewById(R.id.button2);
+
+        DrawerLayout drawer = binding.drawerLayout;
+        navigationView = binding.navView;
+
+        mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.activity_reproductor_video)
+                .setOpenableLayout(drawer)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(navigationView, navController);
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,23 +66,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //if(userService.isLogged()) {
-            DrawerLayout drawer = binding.drawerLayout;
-            NavigationView navigationView = binding.navView;
-            // Passing each menu ID as a set of Ids because each
-            // menu should be considered as top level destinations.
 
+   }
 
-            mAppBarConfiguration = new AppBarConfiguration.Builder(
-                    R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.activity_reproductor_video, R.id.logout)
-                    .setOpenableLayout(drawer)
-                    .build();
-            NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-            NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-            NavigationUI.setupWithNavController(navigationView, navController);
-        }
+   public void onResume() {
+       super.onResume();
 
-   // }
+       if(userService.isLogged()) {
+           hideItemLogged();
+       }else {
+            hideItemLogout();
+       }
+   }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -102,30 +106,31 @@ public class MainActivity extends AppCompatActivity {
 
     public void logout (){
 
-
       Message message =  userService.logout();
         Toast.makeText(this, message.getMessage(), Toast.LENGTH_SHORT).show();
-        Intent loginIntent = new Intent(this, activity_login.class);
-        loginIntent.putExtra("Mensaje Logout", message.getMessage());
-        startActivity(loginIntent);
-
-
     }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.logout) {// EITHER CALL THE METHOD HERE OR DO THE FUNCTION DIRECTLY
         Log.d("Logout", "Logout");
-
          logout();
+        recreate();
         }
         return super.onOptionsItemSelected(item);
     }
 
-
-
+    private void hideItemLogged() {
+        Menu menu = navigationView.getMenu();
+        menu.findItem(R.id.activity_login).setVisible(false);
+        btnLogin.setVisibility(View.GONE);
+        btnRegister.setVisibility(View.GONE);
+    }
+    private void hideItemLogout() {
+        Menu menu = navigationView.getMenu();
+        menu.findItem(R.id.logout).setVisible(false);
+        menu.findItem(R.id.nav_gallery).setVisible(false);
+    }
 
 
 }
