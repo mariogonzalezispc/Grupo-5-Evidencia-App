@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
     private  NavigationView navigationView ;
 
+    private static final String FINISH_LOGIN = "finish login";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,10 +75,17 @@ public class MainActivity extends AppCompatActivity {
    public void onResume() {
        super.onResume();
 
+       String message = getIntent().getStringExtra("message");
        if(userService.isLogged()) {
            hideItemLogged();
+           if (FINISH_LOGIN.equals(message)){
+               Toast.makeText(this, "Inicio sesión correctamente", Toast.LENGTH_SHORT).show();
+           }
        }else {
             hideItemLogout();
+           if (FINISH_LOGIN.equals(message)){
+               Toast.makeText(this, "Error al iniciar Sesión", Toast.LENGTH_SHORT).show();
+           }
        }
    }
 

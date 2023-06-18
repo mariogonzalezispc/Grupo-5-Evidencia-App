@@ -87,9 +87,7 @@ public class UserRepository implements Executor {
                         if (!task.isSuccessful() || task.isCanceled()) {
                             Log.d("LOGIN", "ERROR" + task.getResult().toString());
                             throw new RuntimeException("Error al loguearse");
-
                         }
-
                     }}).addOnFailureListener(new OnFailureListener() {
                           @Override
                           public void onFailure(@NonNull Exception e) {
