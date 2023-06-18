@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
     private  NavigationView navigationView ;
 
-    private static final String FINISH_LOGIN = "finish login";
 
 
     @Override
@@ -75,17 +74,10 @@ public class MainActivity extends AppCompatActivity {
    public void onResume() {
        super.onResume();
 
-       String message = getIntent().getStringExtra("message");
        if(userService.isLogged()) {
            hideItemLogged();
-           if (FINISH_LOGIN.equals(message)){
-               Toast.makeText(this, "Inicio sesión correctamente", Toast.LENGTH_SHORT).show();
-           }
        }else {
             hideItemLogout();
-           if (FINISH_LOGIN.equals(message)){
-               Toast.makeText(this, "Error al iniciar Sesión", Toast.LENGTH_SHORT).show();
-           }
        }
    }
 
@@ -126,6 +118,11 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Logout", "Logout");
          logout();
         recreate();
+        }
+        if (item.getItemId()== R.id.activity_reproductor_video){
+            Intent intent = new Intent(this, activity_reproductor_video.class);
+            intent.putExtra("Mensaje","No te olvides de lo importante que es reciclar");
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

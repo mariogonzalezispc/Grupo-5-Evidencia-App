@@ -51,8 +51,8 @@ public class activity_login extends AppCompatActivity {
         String email = correo.getText().toString();
         String password = contrasena.getText().toString();
         Message message = userService.login(email,password);
+        Thread.sleep(1*1000);
         Intent intent = new Intent(this,MainActivity.class);
-        intent.putExtra("message","finish login");
         startActivity(intent);
     }
 }

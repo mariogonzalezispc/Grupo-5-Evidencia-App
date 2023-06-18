@@ -36,7 +36,8 @@ public class UserService {
         return name.isEmpty()|| lastname.isEmpty()||email.isEmpty()||password.isEmpty()||password2.isEmpty();
     }
 
-    public Message login (String mail,String password){
+
+    public  Message login (String mail,String password){
 
         Message message = new Message();
         if (userRepository.getCurrentUser()!= null){
