@@ -11,6 +11,11 @@ public class Message {
         this.message = message;
     }
 
+    public Message(String message, boolean isOK) {
+        this.message = message;
+        this.isOK = isOK;
+    }
+
     public String getMessage() {
         return message;
     }

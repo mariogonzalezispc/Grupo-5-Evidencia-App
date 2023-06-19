@@ -14,7 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EcoDoctapp"
         tools:targetApi="31">
-
+        <activity
+            android:name=".Perfil"
+            android:exported="false"
+            android:label="@string/title_activity_perfil"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.EcoDoctapp" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -33,20 +38,20 @@
         <activity
             android:name=".EcoPuntos"
             android:exported="false"
-            android:parentActivityName=".MainActivity"
-            android:label="EcoPuntos" />
+            android:label="EcoPuntos"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".activity_reproductor_video"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".activity_login"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".RegisterActivity"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -3,7 +3,9 @@ package com.cdp.ecodoctapp.service;
 import android.util.Log;
 
 import com.cdp.ecodoctapp.entity.Message;
+import com.cdp.ecodoctapp.entity.UserEntity;
 import com.cdp.ecodoctapp.repository.UserRepository;
+import com.google.firebase.firestore.auth.User;
 
 public class UserService {
 
@@ -14,10 +16,10 @@ public class UserService {
 
         // se valida que los datos no sean nulos
         if (validData(name,lastname,email, password,password2)){
-            return new Message("Complete todos los datos son obligatorios");
+            return new Message("Complete todos los datos son obligatorios",false);
         }
         if (!password.equals(password2)){
-            return new Message("Las contraseñas no coinciden");
+            return new Message("Las contraseñas no coinciden",false);
         }
 
         Message message = new Message();
@@ -25,8 +27,10 @@ public class UserService {
         try {
             userRepository.register(name, lastname, email, password);
             message.setMessage("Se creo el usuario exitosamente");
+            message.setOK(true);
         } catch (Exception e){
             message.setMessage("No se guardo los datos correctamente");
+            message.setOK(false);
         }
 
         return message;
@@ -78,7 +82,24 @@ public class UserService {
     }
 
     public boolean isLogged(){
-
         return userRepository.getCurrentUser()!=null && userRepository.getCurrentUser().getEmail()!=null;
     }
+
+    public String getLoggedUser(){
+        Log.d("USER",userRepository.getCurrentUser().getEmail().toString());
+
+        userRepository.getCurrentUser().getDisplayName();
+        return userRepository.getCurrentUser().getEmail();
+    }
+
+  public void getUsuario() throws InterruptedException {
+      userRepository.traerUsuario();
+
+
+  }
+
+  public UserEntity getUser(){
+   return userRepository.user[0];
+  }
+
 }

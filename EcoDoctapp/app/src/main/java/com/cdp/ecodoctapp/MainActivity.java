@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView = binding.navView;
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.activity_reproductor_video)
+                R.id.nav_home, R.id.activity_reproductor_video)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
     private void hideItemLogout() {
         Menu menu = navigationView.getMenu();
         menu.findItem(R.id.logout).setVisible(false);
-        menu.findItem(R.id.nav_gallery).setVisible(false);
+        menu.findItem(R.id.Perfil).setVisible(false);
     }
 
 
