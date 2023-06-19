@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,16 +49,25 @@ public class activity_login extends AppCompatActivity {
 
 
     public void iniciarSesion (View view) throws InterruptedException {
-        String email = correo.getText().toString();
-        String password = contrasena.getText().toString();
-        Message message = userService.login(email,password);
-        Thread.sleep(5*1000);
-        if (userService.isLogged()){
-            Toast.makeText(this, message.getMessage(), Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this,MainActivity.class);
-            startActivity(intent);
-        } else {
+        try {
+            String email = correo.getText().toString();
+            String password = contrasena.getText().toString();
+            Message message = userService.login(email,password);
+            Thread.sleep(2*1000);
+            if (userService.isLogged()){
+                Toast.makeText(this, message.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.d("Login", "Login correcto REDIRIGIENDO");
+                Intent intent = new Intent(this,MainActivity.class);
+                startActivity(intent);
+            } else {
+
+                Toast.makeText(this, "Error al loguearse", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            Log.d("Login", "Login INCORRECTO NO REDIRIGIR AAAAAAAAAAAAAAAA");
             Toast.makeText(this, "Error al loguearse", Toast.LENGTH_SHORT).show();
         }
     }
-}
+        }
+
+

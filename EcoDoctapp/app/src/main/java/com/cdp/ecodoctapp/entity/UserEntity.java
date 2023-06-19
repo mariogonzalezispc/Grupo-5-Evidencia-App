@@ -14,6 +14,9 @@ public class UserEntity {
         this.lastname = lastname;
     }
 
+    public UserEntity() {
+    }
+
     public String getEmail() {
         return email;
     }
@@ -45,5 +48,15 @@ public class UserEntity {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "id='" + id + '\'' +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", lastname='" + lastname + '\'' +
+                '}';
     }
 }
