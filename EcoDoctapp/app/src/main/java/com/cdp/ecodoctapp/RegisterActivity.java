@@ -61,6 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
         if (message.isOK()){
             Toast.makeText(this, message.getMessage(), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this,MainActivity.class);
+            Thread.sleep(3000);
             startActivity(intent);
         } else {
             Toast.makeText(this, message.getMessage(), Toast.LENGTH_SHORT).show();

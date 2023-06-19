@@ -49,7 +49,7 @@ public class activity_reproductor_video extends AppCompatActivity {
         String msg = getIntent().getStringExtra("Mensaje");
         messagge.setText(msg);
         messagge.setVisibility(View.VISIBLE);
-        Log.d(msg,msg);
+
 
 
         MediaController mediaC = new MediaController(this);
