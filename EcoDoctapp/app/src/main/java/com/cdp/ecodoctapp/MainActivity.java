@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
     private  NavigationView navigationView ;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,6 +118,11 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Logout", "Logout");
          logout();
         recreate();
+        }
+        if (item.getItemId()== R.id.activity_reproductor_video){
+            Intent intent = new Intent(this, activity_reproductor_video.class);
+            intent.putExtra("Mensaje","No te olvides de lo importante que es reciclar");
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

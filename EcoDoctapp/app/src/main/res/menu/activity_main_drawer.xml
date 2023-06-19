@@ -14,10 +14,12 @@
             android:icon="@drawable/btn_login"
             android:title="Mi Perfil"
             />
+
         <item
             android:id="@+id/activity_reproductor_video"
             android:icon="@drawable/btn_login"
-            android:title="EcoVideo"  />
+            android:title="EcoVideo"
+            android:onClick="onOptionsItemSelected"/>
         <item
             android:id="@+id/ecoPuntos2"
             android:icon="@drawable/btn_login"
@@ -30,8 +32,7 @@
             android:id="@+id/logout"
             android:icon="@drawable/btn_login"
             android:title="Cerrar Sesión"
-            android:onClick="onOptionsItemSelected"
-            app:actionViewClass="android.widget.Button" />
+            android:onClick="onOptionsItemSelected" />
 
 
     </group>

@@ -49,6 +49,7 @@ public class activity_login extends AppCompatActivity {
 
 
     public void iniciarSesion (View view) throws InterruptedException {
+
         try {
             String email = correo.getText().toString();
             String password = contrasena.getText().toString();
@@ -67,6 +68,7 @@ public class activity_login extends AppCompatActivity {
             Log.d("Login", "Login INCORRECTO NO REDIRIGIR AAAAAAAAAAAAAAAA");
             Toast.makeText(this, "Error al loguearse", Toast.LENGTH_SHORT).show();
         }
+
     }
         }
 

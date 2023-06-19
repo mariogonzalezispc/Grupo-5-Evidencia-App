@@ -2,12 +2,16 @@ package com.cdp.ecodoctapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.MediaController;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
@@ -17,10 +21,13 @@ public class activity_reproductor_video extends AppCompatActivity {
     private static final String VIDEO_SAMPLE = "ecoaliados";
     private VideoView mVideoView;
 
+    private TextView messagge;
+
     private Uri getMedia(String mediaName) {
         return Uri.parse( "android.resource://"+getPackageName()+"/raw/"+mediaName);
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +44,12 @@ public class activity_reproductor_video extends AppCompatActivity {
         }else {
             getSupportActionBar().show();
         }*/
+
+        messagge = findViewById(R.id.message_main);
+        String msg = getIntent().getStringExtra("Mensaje");
+        messagge.setText(msg);
+        messagge.setVisibility(View.VISIBLE);
+        Log.d(msg,msg);
 
 
         MediaController mediaC = new MediaController(this);
