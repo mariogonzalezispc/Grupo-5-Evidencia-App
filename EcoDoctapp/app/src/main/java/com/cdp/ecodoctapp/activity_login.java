@@ -51,9 +51,13 @@ public class activity_login extends AppCompatActivity {
         String email = correo.getText().toString();
         String password = contrasena.getText().toString();
         Message message = userService.login(email,password);
-        Toast.makeText(this, message.getMessage(), Toast.LENGTH_SHORT).show();
-        Thread.sleep(1*1000);
-        Intent intent = new Intent(this,MainActivity.class);
-        startActivity(intent);
+        Thread.sleep(5*1000);
+        if (userService.isLogged()){
+            Toast.makeText(this, message.getMessage(), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this,MainActivity.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Error al loguearse", Toast.LENGTH_SHORT).show();
+        }
     }
 }

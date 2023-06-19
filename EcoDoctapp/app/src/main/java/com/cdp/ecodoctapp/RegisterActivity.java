@@ -55,13 +55,16 @@ public class RegisterActivity extends AppCompatActivity {
         String email = correoRegister.getText().toString();
         String password = contrasenaRegister.getText().toString();
         String password2 = contrasenaRegisterConfirmacion.getText().toString();
-
         Message message = userService.register(name,lastname,email,password,password2);
 
-        Toast.makeText(this,message.getMessage(),Toast.LENGTH_SHORT);
-        Thread.sleep(1*1000);
-        Intent intent = new Intent(this,MainActivity.class);
-        startActivity(intent);
+        if (message.isOK()){
+            Toast.makeText(this, message.getMessage(), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this,MainActivity.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, message.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 
