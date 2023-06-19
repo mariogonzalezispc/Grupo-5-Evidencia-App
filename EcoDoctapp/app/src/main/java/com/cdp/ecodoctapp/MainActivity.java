@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
     private void hideItemLogout() {
         Menu menu = navigationView.getMenu();
         menu.findItem(R.id.logout).setVisible(false);
-        menu.findItem(R.id.nav_gallery).setVisible(false);
+        menu.findItem(R.id.Perfil).setVisible(false);
     }
 
 

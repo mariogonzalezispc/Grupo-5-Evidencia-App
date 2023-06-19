@@ -54,5 +54,10 @@
         android:name="com.cdp.ecodoctapp.activity_login"
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
+    <activity
+        android:id="@+id/Perfil"
+        android:name="com.cdp.ecodoctapp.Perfil"
+        android:label="activity_perfil"
+        tools:layout="@layout/activity_perfil" />
 
 </navigation>

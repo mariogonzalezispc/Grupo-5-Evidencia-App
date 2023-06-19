@@ -10,10 +10,10 @@
             android:icon="@drawable/btn_login"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/Perfil"
             android:icon="@drawable/btn_login"
             android:title="Mi Perfil"
-            app:actionViewClass="android.widget.Button" />
+            />
         <item
             android:id="@+id/activity_reproductor_video"
             android:icon="@drawable/btn_login"
