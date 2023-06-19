@@ -1,9 +1,9 @@
 package com.cdp.ecodoctapp.repository;
 
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.cdp.ecodoctapp.entity.UserEntity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -12,6 +12,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,6 +30,7 @@ public class UserRepository implements Executor {
 
     private FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    public UserEntity[] user = {new UserEntity()};
 
     // autenticacion con firebase
     public void register (String name, String lastname, String email, String password){
@@ -104,8 +106,57 @@ public class UserRepository implements Executor {
         Log.d("LOGOUT", "¡se deslogeo!");
     }
 
+    public void traerUsuario()  throws InterruptedException {
+
+
+        dref.orderByChild("id").equalTo(getCurrentUser().getUid()).addChildEventListener(new ChildEventListener() {
+
+
+        @Override
+        public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
+            UserEntity user2 = dataSnapshot.getValue(UserEntity.class);
+            Log.d("USER", user2.getName());
+            Log.d("USER", user2.getLastname());
+
+         user[0] = user2;
+
+        }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+
+
+        }
+        ) ;
+
+
+
+
+
+
+    }
+
+
     @Override
     public void execute(Runnable runnable) {
 
     }
 }
+

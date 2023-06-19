@@ -50,6 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void registrarUsuario (View view) throws InterruptedException {
 
+
         String name = nombre.getText().toString();
         String lastname = apellido.getText().toString();
         String email = correoRegister.getText().toString();

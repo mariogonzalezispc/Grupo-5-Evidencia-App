@@ -3,7 +3,9 @@ package com.cdp.ecodoctapp.service;
 import android.util.Log;
 
 import com.cdp.ecodoctapp.entity.Message;
+import com.cdp.ecodoctapp.entity.UserEntity;
 import com.cdp.ecodoctapp.repository.UserRepository;
+import com.google.firebase.firestore.auth.User;
 
 public class UserService {
 
@@ -81,4 +83,22 @@ public class UserService {
     public boolean isLogged(){
         return userRepository.getCurrentUser()!=null && userRepository.getCurrentUser().getEmail()!=null;
     }
+
+    public String getLoggedUser(){
+        Log.d("USER",userRepository.getCurrentUser().getEmail().toString());
+
+        userRepository.getCurrentUser().getDisplayName();
+        return userRepository.getCurrentUser().getEmail();
+    }
+
+  public void getUsuario() throws InterruptedException {
+      userRepository.traerUsuario();
+
+
+  }
+
+  public UserEntity getUser(){
+   return userRepository.user[0];
+  }
+
 }
